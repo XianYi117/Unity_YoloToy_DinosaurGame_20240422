@@ -6,10 +6,12 @@ public class ControlSystem : MonoBehaviour
     [Header("跳躍力度"), Range(0, 10)]
     public float jump;
     bool isJumping;
+    public GamemanagerSystem gm;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        isJumping = false;
     }
 
     // Update is called once per frame
@@ -26,5 +28,10 @@ public class ControlSystem : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         isJumping = false;
+
+        if (collision.gameObject.tag == "Mon")
+        {
+            gm.GameOver();
+        }
     }
 }

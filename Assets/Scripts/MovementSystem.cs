@@ -21,7 +21,15 @@ public class MovementSystem : MonoBehaviour
 
         if( transform.position.x <= endPosition) 
         {
-            transform.position = new Vector2( startPosition,transform.position.y );
+            if(gameObject.tag=="Mon")
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                transform.position = new Vector2(startPosition, transform.position.y);
+            }
+            
         }
     }
 }
