@@ -8,13 +8,6 @@ public class GamemanagerSystem : MonoBehaviour
     public GameObject nowMonster;
     public float spawnTime;
     float timer;
-    public GameObject GameOverScene;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -27,16 +20,5 @@ public class GamemanagerSystem : MonoBehaviour
             Instantiate(monster[random], spawnPosition.transform);
             timer = 0;
         }
-    }
-    
-    public void GameOver()
-    {
-        Time.timeScale = 0;
-        GameOverScene.SetActive(true);
-    }
-
-    public void ReStart()
-    {
-        SceneManager.LoadScene("遊戲場景");
     }
 }

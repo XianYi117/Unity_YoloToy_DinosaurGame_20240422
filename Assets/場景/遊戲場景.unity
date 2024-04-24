@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 43948675}
   - component: {fileID: 43948674}
   m_Layer: 0
-  m_Name: landscape(1)
+  m_Name: "\u98A8\u666F2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -434,7 +434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.927, y: 1.6721}
+  m_AnchoredPosition: {x: 0, y: 1.6721}
   m_SizeDelta: {x: 308.3076, y: 26.6558}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188217304
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 299284590}
   - component: {fileID: 299284591}
   m_Layer: 0
-  m_Name: "\u4E3B\u89D2"
+  m_Name: player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -729,8 +729,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 299284586}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.32, y: 0.09, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 10}
+  m_LocalPosition: {x: -7.32, y: -1.27, z: 0}
+  m_LocalScale: {x: 12, y: 12, z: 12}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -762,7 +762,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &299284591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -795,7 +795,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0058746114, y: -0.06266232}
+  m_Offset: {x: 0.0058746114, y: -0.06557766}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -806,7 +806,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.14201306, y: 0.20250815}
+  m_Size: {x: 0.14201306, y: 0.19667746}
   m_EdgeRadius: 0
 --- !u!114 &299284592
 MonoBehaviour:
@@ -920,7 +920,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &413755898
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1048,7 +1048,7 @@ GameObject:
   - component: {fileID: 564445456}
   - component: {fileID: 564445455}
   m_Layer: 0
-  m_Name: Ground (1)
+  m_Name: "\u5730\u677F2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1238,7 +1238,7 @@ GameObject:
   - component: {fileID: 624935136}
   - component: {fileID: 624935134}
   m_Layer: 0
-  m_Name: Background
+  m_Name: "\u80CC\u666F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1689,7 +1689,7 @@ GameObject:
   - component: {fileID: 855602424}
   - component: {fileID: 855602423}
   m_Layer: 0
-  m_Name: landscape
+  m_Name: "\u98A8\u666F"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1782,86 +1782,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &962340726
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 962340727}
-  - component: {fileID: 962340729}
-  - component: {fileID: 962340728}
-  m_Layer: 5
-  m_Name: "\u901A\u95DC\u8CC7\u8A0A(\u82F1\u6587)"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &962340727
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962340726}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1855472477}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 50.4425}
-  m_SizeDelta: {x: 451.3188, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &962340728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962340726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: a3d9bd8f31321124593cccab9b53dfec, type: 3}
-    m_FontSize: 16
-    m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 0
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "Congratulations on completing the experience, \n"
---- !u!222 &962340729
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 962340726}
-  m_CullTransparentMesh: 1
 --- !u!1 &1219716484
 GameObject:
   m_ObjectHideFlags: 0
@@ -2673,7 +2593,6 @@ MonoBehaviour:
   spawnPosition: {fileID: 1949628124}
   nowMonster: {fileID: 0}
   spawnTime: 3
-  GameOverScene: {fileID: 0}
 --- !u!4 &1336061199
 Transform:
   m_ObjectHideFlags: 0
@@ -2785,7 +2704,7 @@ GameObject:
   - component: {fileID: 1451853427}
   - component: {fileID: 1451853426}
   m_Layer: 0
-  m_Name: Background (1)
+  m_Name: "\u80CC\u666F2"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2908,8 +2827,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 28.4684}
-  m_SizeDelta: {x: 314.1651, y: 31.0632}
+  m_AnchoredPosition: {x: 0, y: 26}
+  m_SizeDelta: {x: 308.31, y: 31.0632}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1476571626
 MonoBehaviour:
@@ -2988,8 +2907,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 71}
-  m_SizeDelta: {x: 376.7747, y: 38.2316}
+  m_AnchoredPosition: {x: 0, y: 50.626125}
+  m_SizeDelta: {x: 357.6162, y: 29.5793}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1520797339
 MonoBehaviour:
@@ -3306,7 +3225,7 @@ GameObject:
   - component: {fileID: 1708696059}
   - component: {fileID: 1708696058}
   m_Layer: 0
-  m_Name: Ground
+  m_Name: "\u5730\u7248"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3563,13 +3482,14 @@ GameObject:
   - component: {fileID: 1855472477}
   - component: {fileID: 1855472479}
   - component: {fileID: 1855472478}
+  - component: {fileID: 1855472480}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1855472477
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3583,7 +3503,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1520797338}
-  - {fileID: 962340727}
   - {fileID: 1476571625}
   - {fileID: 188217303}
   - {fileID: 413755898}
@@ -3633,6 +3552,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855472476}
   m_CullTransparentMesh: 1
+--- !u!225 &1855472480
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855472476}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1949628124
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,7 +3574,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1949628125}
   m_Layer: 0
-  m_Name: MonsterSpawnPosition
+  m_Name: "\u751F\u6210\u9EDE"
   m_TagString: Untagged
   m_Icon: {fileID: 7174288486110832750, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
