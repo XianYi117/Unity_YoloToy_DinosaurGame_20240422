@@ -821,7 +821,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jump: 7.5
-  gm: {fileID: 0}
+  gameOverScene: {fileID: 1855472476}
 --- !u!1 &397333036
 GameObject:
   m_ObjectHideFlags: 0
@@ -2606,7 +2606,6 @@ MonoBehaviour:
   - {fileID: 4339165005910975803, guid: d498870b2d21a754db52b26487cfa426, type: 3}
   - {fileID: 6289805087868748450, guid: 203dfd52ef1c048478494d7db421a497, type: 3}
   spawnPosition: {fileID: 1949628124}
-  nowMonster: {fileID: 0}
   spawnTime: 3
 --- !u!1 &1350049392
 GameObject:
@@ -3482,14 +3481,13 @@ GameObject:
   - component: {fileID: 1855472477}
   - component: {fileID: 1855472479}
   - component: {fileID: 1855472478}
-  - component: {fileID: 1855472480}
   m_Layer: 5
   m_Name: GameOver
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1855472477
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3552,18 +3550,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855472476}
   m_CullTransparentMesh: 1
---- !u!225 &1855472480
-CanvasGroup:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855472476}
-  m_Enabled: 1
-  m_Alpha: 0
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
 --- !u!1 &1949628124
 GameObject:
   m_ObjectHideFlags: 0
