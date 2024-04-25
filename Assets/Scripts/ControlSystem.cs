@@ -11,7 +11,6 @@ namespace Xian
         [Header("跳躍力度"), Range(0, 10)]
         public float jump;
         bool isJumping;
-        public GamemanagerSystem gm;
         // Start is called before the first frame update
         void Start()
         {
