@@ -2,6 +2,9 @@
 
 namespace Xian
 {
+    /// <summary>
+    /// 移動系統：場景及物件橫移
+    /// </summary>
     public class MovementSystem : MonoBehaviour
     {
         [Header("場景移動速度"), Range(0, 10)]

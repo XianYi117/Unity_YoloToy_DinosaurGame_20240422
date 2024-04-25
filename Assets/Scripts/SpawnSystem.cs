@@ -2,6 +2,9 @@
 
 namespace Xian
 {
+    /// <summary>
+    /// 生成系統：預製物生成
+    /// </summary>
     public class SpawnSystem : MonoBehaviour
     {
         //怪物陣列

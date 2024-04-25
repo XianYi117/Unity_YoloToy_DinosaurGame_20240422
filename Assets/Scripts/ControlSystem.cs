@@ -2,6 +2,9 @@
 
 namespace Xian
 {
+    /// <summary>
+    /// 角色控制系統：控制角色進行動作
+    /// </summary>
     public class ControlSystem : MonoBehaviour
     {
         //剛體組件
@@ -11,6 +14,8 @@ namespace Xian
         [Header("跳躍力度"), Range(0, 10)]
         public float jump;
         bool isJumping;
+        [Header("結束畫面")]
+        public GameObject gameOverScene;
         // Start is called before the first frame update
         void Start()
         {
@@ -52,7 +57,17 @@ namespace Xian
         {
             isJumping = false;
             ani.SetBool("isJump", false);
+            //判定當物件觸碰到tag為Mon的物件時
+            if(collision.gameObject.CompareTag("Mon"))
+            {
+                //停止遊戲
+                Time.timeScale = 0;
+                //將結束畫面顯示
+                gameOverScene.SetActive(true);
+            }
+
         }
+        
     }
 }
 
