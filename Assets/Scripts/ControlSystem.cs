@@ -1,55 +1,59 @@
 ﻿using UnityEngine;
 
-public class ControlSystem : MonoBehaviour
+namespace Xian
 {
-    //剛體組件
-    private Rigidbody2D rbody;
-    //動畫組件
-    private Animator ani;
-    [Header("跳躍力度"), Range(0, 10)]
-    public float jump;
-    bool isJumping;
-    public GamemanagerSystem gm;
-    // Start is called before the first frame update
-    void Start()
+    public class ControlSystem : MonoBehaviour
     {
-        rbody = GetComponent<Rigidbody2D>();
-        ani= GetComponent<Animator>();
-        isJumping = false;
-    }
+        //剛體組件
+        private Rigidbody2D rbody;
+        //動畫組件
+        private Animator ani;
+        [Header("跳躍力度"), Range(0, 10)]
+        public float jump;
+        bool isJumping;
+        public GamemanagerSystem gm;
+        // Start is called before the first frame update
+        void Start()
+        {
+            rbody = GetComponent<Rigidbody2D>();
+            ani = GetComponent<Animator>();
+            isJumping = false;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        //按下上、space按鍵即可跳躍並判斷是否落地
-        if(Input.GetKeyDown(KeyCode.UpArrow)&&isJumping==false)
+        // Update is called once per frame
+        void Update()
         {
-            
-            rbody.velocity = new Vector2 ( 0, jump );
-            isJumping = true;
-            ani.SetBool("isJump", true);
-        }
-        if (Input.GetKeyDown(KeyCode.Space) && isJumping == false)
-        {
+            //按下上、space按鍵即可跳躍並判斷是否落地
+            if (Input.GetKeyDown(KeyCode.UpArrow) && isJumping == false)
+            {
 
-            rbody.velocity = new Vector2(0, jump);
-            isJumping = true;
-            ani.SetBool("isJump", true);
+                rbody.velocity = new Vector2(0, jump);
+                isJumping = true;
+                ani.SetBool("isJump", true);
+            }
+            if (Input.GetKeyDown(KeyCode.Space) && isJumping == false)
+            {
+
+                rbody.velocity = new Vector2(0, jump);
+                isJumping = true;
+                ani.SetBool("isJump", true);
+            }
+            //判斷 下 鍵值小於0時執行蹲下動畫、大於等於0時關閉蹲下動畫
+            float v = Input.GetAxis("Vertical");
+            if (v < 0)
+            {
+                ani.SetBool("isSquat", true);
+            }
+            else
+            {
+                ani.SetBool("isSquat", false);
+            }
         }
-        float v = Input.GetAxis("Vertical");
-        print($"垂直{v}");
-        if (v < 0)
+        private void OnCollisionEnter2D(Collision2D collision)
         {
-            ani.SetBool("isSquat", true);
+            isJumping = false;
+            ani.SetBool("isJump", false);
         }
-        else
-        {
-            ani.SetBool("isSquat", false);
-        }
-    }
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        isJumping = false;
-        ani.SetBool("isJump", false);
     }
 }
+

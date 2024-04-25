@@ -2567,32 +2567,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1336061199}
-  - component: {fileID: 1336061198}
+  - component: {fileID: 1336061200}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: "\u751F\u6210\u602A\u7269"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1336061198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336061197}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ad484aa4c5b632459a794771f3e5b4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  monster:
-  - {fileID: 4339165005910975803, guid: d498870b2d21a754db52b26487cfa426, type: 3}
-  - {fileID: 6289805087868748450, guid: 203dfd52ef1c048478494d7db421a497, type: 3}
-  spawnPosition: {fileID: 1949628124}
-  nowMonster: {fileID: 0}
-  spawnTime: 3
 --- !u!4 &1336061199
 Transform:
   m_ObjectHideFlags: 0
@@ -2608,6 +2590,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1336061200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336061197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b439ec55ee4ff35478b56e58e2d8f549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monster:
+  - {fileID: 4339165005910975803, guid: d498870b2d21a754db52b26487cfa426, type: 3}
+  - {fileID: 6289805087868748450, guid: 203dfd52ef1c048478494d7db421a497, type: 3}
+  spawnPosition: {fileID: 1949628124}
+  nowMonster: {fileID: 0}
+  spawnTime: 3
 --- !u!1 &1350049392
 GameObject:
   m_ObjectHideFlags: 0
@@ -3560,7 +3560,7 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1855472476}
   m_Enabled: 1
-  m_Alpha: 1
+  m_Alpha: 0
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
