@@ -20,6 +20,16 @@ namespace Xian
         bool isSquatting;
         [Header("結束畫面")]
         public GameObject gameOverScene;
+        // 添加了 BoxCollider2D 引用，用於控制角色的碰撞器
+        public BoxCollider2D boxCollider;
+
+        // 添加了蹲下時和站立時的 Collider 大小變數
+        Vector2 standingSize;
+        Vector2 crouchingSize = new Vector2(0.1727118f, 0.1698162f);
+
+        // 添加了蹲下時和站立時的 Collider 中心點偏移變數
+        Vector2 standingOffset;
+        Vector2 crouchingOffset = new Vector2(0.009711877f, -0.0790083f);
 
         private void Awake()
         {
@@ -28,6 +38,10 @@ namespace Xian
             ani = GetComponent<Animator>();
             isJumping = false;
             isSquatting = false;
+
+            // 獲取初始的站立時 Collider 的大小和中心點偏移
+            standingSize = boxCollider.size;
+            standingOffset = boxCollider.offset;
         }
 
         // Update is called once per frame
@@ -57,6 +71,7 @@ namespace Xian
             rbody.velocity = new Vector2(0, jump);
             isJumping = true;
             ani.SetBool("isJump", true);
+
         }
 
         // 新增的函數，處理蹲下功能
@@ -69,6 +84,10 @@ namespace Xian
                 rbody.velocity /= squatSpeed;
                 isSquatting = true;
                 ani.SetBool("isSquat", true);
+
+                // 蹲下時設置 Collider 的大小和中心點偏移
+                boxCollider.size = crouchingSize;
+                boxCollider.offset = crouchingOffset;
             }
         }
 
@@ -81,6 +100,10 @@ namespace Xian
                 rbody.velocity *= squatSpeed;
                 isSquatting = false;
                 ani.SetBool("isSquat", false);
+
+                // 站起來時恢復 Collider 的大小和中心點偏移
+                boxCollider.size = standingSize;
+                boxCollider.offset = standingOffset;
             }
         }
 
