@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
 
 namespace Xian
 {
@@ -14,8 +15,6 @@ namespace Xian
         private Animator ani;
         [Header("跳躍力度"), Range(0, 10)]
         public float jump;
-        [Header("蹲下速度"), Range(0, 10)]
-        public float squatSpeed;
         bool isJumping;
         bool isSquatting;
         [Header("結束畫面")]
@@ -55,13 +54,22 @@ namespace Xian
 
             // 判斷 下 鍵值小於0時執行蹲下動畫、大於等於0時關閉蹲下動畫
             float v = Input.GetAxis("Vertical");
-            if (v < 0)
+            if (isSquatting || v < 0) //蹲下
             {
-                Squat();
+
+                ani.SetBool("isSquat", true);
+                // 蹲下時設置 Collider 的大小和中心點偏移
+                boxCollider.size = crouchingSize;
+                boxCollider.offset = crouchingOffset;
             }
-            else
+            else //站起
             {
-                StandUp();
+ 
+                ani.SetBool("isSquat", false);
+
+                // 站起來時恢復 Collider 的大小和中心點偏移
+                boxCollider.size = standingSize;
+                boxCollider.offset = standingOffset;
             }
         }
 
@@ -77,34 +85,15 @@ namespace Xian
         // 新增的函數，處理蹲下功能
         public void Squat()
         {
-            Debug.Log("呼叫成功");
-            if (!isSquatting)
-            {
-                // 蹲下時降低速度
-                rbody.velocity /= squatSpeed;
-                isSquatting = true;
-                ani.SetBool("isSquat", true);
+            isSquatting = true;
 
-                // 蹲下時設置 Collider 的大小和中心點偏移
-                boxCollider.size = crouchingSize;
-                boxCollider.offset = crouchingOffset;
-            }
         }
 
         // 新增的函數，處理站起來功能
         public void StandUp()
         {
-            if (isSquatting)
-            {
-                // 站起來時恢復速度
-                rbody.velocity *= squatSpeed;
-                isSquatting = false;
-                ani.SetBool("isSquat", false);
+            isSquatting = false;
 
-                // 站起來時恢復 Collider 的大小和中心點偏移
-                boxCollider.size = standingSize;
-                boxCollider.offset = standingOffset;
-            }
         }
 
         private void OnCollisionEnter2D(Collision2D collision)
