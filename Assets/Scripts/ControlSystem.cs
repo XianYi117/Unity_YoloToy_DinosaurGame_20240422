@@ -16,7 +16,7 @@ namespace Xian
         [Header("跳躍力度"), Range(0, 10)]
         public float jump;
         bool isJumping;
-        bool isSquatting;
+        bool isCrouching;
         [Header("結束畫面")]
         public GameObject gameOverScene;
         // 添加了 BoxCollider2D 引用，用於控制角色的碰撞器
@@ -24,11 +24,13 @@ namespace Xian
 
         // 添加了蹲下時和站立時的 Collider 大小變數
         Vector2 standingSize;
-        Vector2 crouchingSize = new Vector2(0.1727118f, 0.1698162f);
+        Vector2 crouchingSize = new Vector2(3.11249f, 2.698817f);
+        Vector2 jumpingSize = new Vector2(3.153857f, 3.815734f);
 
         // 添加了蹲下時和站立時的 Collider 中心點偏移變數
         Vector2 standingOffset;
-        Vector2 crouchingOffset = new Vector2(0.009711877f, -0.0790083f);
+        Vector2 crouchingOffset = new Vector2(0.2482035f, -1.530592f);
+        Vector2 jumpingOffset = new Vector2(0.558458f, 0.7652965f);
 
         private void Awake()
         {
@@ -36,7 +38,7 @@ namespace Xian
             rbody = GetComponent<Rigidbody2D>();
             ani = GetComponent<Animator>();
             isJumping = false;
-            isSquatting = false;
+            isCrouching = false;
 
             // 獲取初始的站立時 Collider 的大小和中心點偏移
             standingSize = boxCollider.size;
@@ -54,10 +56,11 @@ namespace Xian
 
             // 判斷 下 鍵值小於0時執行蹲下動畫、大於等於0時關閉蹲下動畫
             float v = Input.GetAxis("Vertical");
-            if (isSquatting || v < 0) //蹲下
+            print(v);
+            if (isCrouching || v < 0) //蹲下
             {
 
-                ani.SetBool("isSquat", true);
+                ani.SetBool("isCrouch", true);
                 // 蹲下時設置 Collider 的大小和中心點偏移
                 boxCollider.size = crouchingSize;
                 boxCollider.offset = crouchingOffset;
@@ -65,7 +68,7 @@ namespace Xian
             else //站起
             {
  
-                ani.SetBool("isSquat", false);
+                ani.SetBool("isCrouch", false);
 
                 // 站起來時恢復 Collider 的大小和中心點偏移
                 boxCollider.size = standingSize;
@@ -79,20 +82,22 @@ namespace Xian
             rbody.velocity = new Vector2(0, jump);
             isJumping = true;
             ani.SetBool("isJump", true);
+            boxCollider.size = jumpingSize;
+            boxCollider.offset = jumpingOffset;
 
         }
 
         // 新增的函數，處理蹲下功能
-        public void Squat()
+        public void Crouch()
         {
-            isSquatting = true;
+            isCrouching = true;
 
         }
 
         // 新增的函數，處理站起來功能
         public void StandUp()
         {
-            isSquatting = false;
+            isCrouching = false;
 
         }
 
@@ -100,6 +105,8 @@ namespace Xian
         {
             isJumping = false;
             ani.SetBool("isJump", false);
+            boxCollider.size = standingSize;
+            boxCollider.offset = standingOffset;
             // 判定當物件觸碰到tag為Mon的物件時
             if (collision.gameObject.CompareTag("Mon"))
             {
