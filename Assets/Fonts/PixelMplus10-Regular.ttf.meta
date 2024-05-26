@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a3d9bd8f31321124593cccab9b53dfec
+guid: 4d145011f88fe044f818566d9966fe31
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Mantou Sans
+  - PixelMplus10
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
