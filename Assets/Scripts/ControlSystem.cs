@@ -19,8 +19,8 @@ namespace Xian
         bool isCrouching;
         [Header("結束畫面")]
         public GameObject gameOverScene;
-        public GameObject up;
-        public GameObject down;
+        public GameObject upButton;
+        public GameObject downButton;
         // 添加了 BoxCollider2D 引用，用於控制角色的碰撞器
 
         private void Awake()
@@ -94,8 +94,8 @@ namespace Xian
                 Time.timeScale = 0;
                 // 將結束畫面顯示
                 gameOverScene.SetActive(true);
-                up.SetActive(false);
-                down.SetActive(false);
+                upButton.SetActive(false);
+                downButton.SetActive(false);
             }
         }
 
